@@ -1,0 +1,7 @@
+# dependency list
+# !pip install Flask
+# !pip install googletrans==3.1.0a0
+# !pip install gTTS
+# !pip install SpeechRecognition
+# !pip install pipwin
+# !pipwin install pyaudio

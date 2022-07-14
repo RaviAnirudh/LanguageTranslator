@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<section id="voice">
+  <h1>VOICE TRANSLATOR</h1>
+  <form action="{{ url_for('translator') }}" enctype="multipart/form-data" method="POST">
+    <div class="row" id="voice-row">
+      <div class="col-sm-3">
+        <button type="button" id="play_but" class="btn btn-success"><i class="fa fa-microphone"></i> Play</button>
+      </div>
+      <div class="col-sm-3">
+        <button type="button" id="stop_but" disabled class="btn btn-danger">Stop</button>
+      </div>
+      <div class="col-sm-3">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-light" ><input id="audioupload" type="file" name="audiovar"></button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-sm-3">
+        <button type="submit" value="submit" class="btn btn-dark">Translate</button>
+      </div>
+    </div>
+
+  </form>
+  <div class="container-fluid voice">
+    <h3>Voice To Text Translation is :</h3>
+    <h5>
+      {{output_voice_text}}
+    </h5>
+  </div>
+
+  
+  <div class="container-fluid voice">
+    <h2>Recorded Audio is available Here!</h2>
+    <ul class="list-group" id="aud_list">
+    </ul>
+  </div>
+
+
+</section>
+<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script src="/static/js/index.js"></script>
+
+{% endblock content %}
